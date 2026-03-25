@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'node:20'
+            args '-u root:root'
+        }
+    }
 
     environment {
         AWS_ACCESS_KEY_ID     = credentials('aws-access-key-id')
@@ -30,6 +35,13 @@ pipeline {
         stage('Build App') {
             steps {
                 sh 'npm run build'
+            }
+        }
+
+        stage('Install AWS CLI') {
+            steps {
+                sh 'apt-get update && apt-get install -y python3 python3-pip'
+                sh 'pip3 install awscli'
             }
         }
 
