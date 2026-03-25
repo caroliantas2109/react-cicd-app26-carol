@@ -6,7 +6,6 @@ function App() {
     <div style={styles.container}>
       <div style={styles.card}>
         <h1 style={styles.title}>Carol Iantas</h1>
-        <p style={styles.subtitle}>Software Development Student • Calgary</p>
         <p style={styles.text}>My React CI/CD App</p>
       </div>
     </div>
@@ -34,11 +33,6 @@ const styles = {
   },
   text: {
     color: "#7a7264"
-  },
-  subtitle: {
-    color: "#a89f91",
-    fontSize: "14px",
-    marginBottom: "10px"
   }
 };
 
